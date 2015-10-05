@@ -363,7 +363,7 @@ class SQLBatchPersister implements PersisterInterface
         $res = [];
         foreach ($results[0] as $k => $v) {
             if ($k[0] === 'n') {
-                $res[substr($k, 1)] = $v;
+                $res[substr($k, 1)] = $v[0];
             }
         }
 
