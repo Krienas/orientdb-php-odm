@@ -42,6 +42,7 @@ class CurlClientResponse
      * @param String $response
      */
     public function __construct($response) {
+        $response = substr($response, strrpos($response, 'HTTP/1.1'));
         @list($this->rawHeaders, $this->body) = explode("\r\n\r\n", $response, 2);
 
         $this->buildHeaders($this->rawHeaders);
